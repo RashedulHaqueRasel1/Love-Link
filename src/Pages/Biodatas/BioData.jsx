@@ -2,18 +2,10 @@ import { Link } from "react-router-dom";
 import LogoImg from "../../assets/noImg.jpg"
  
 
-
 // BioDatas page to bio
 
 const BioData = ({ bio }) => {
-
- 
-    const {name} = bio;
-
-
- 
-
-    // console.log(name)
+    
 
     return (
         <div>
@@ -26,9 +18,8 @@ const BioData = ({ bio }) => {
                 </div>
 
                 <div className="px-6 py-2">
-                    <h1 className="text-xl font-semibold text-gray-800 dark:text-white">{name}</h1>
 
-                    {/* <p className="py-2 text-gray-700 dark:text-gray-400">Full Stack maker & UI / UX Designer , love hip hop music Author of Building UI.</p> */}
+                    <h1 className="text-xl font-semibold text-gray-800 dark:text-white">{bio.name}</h1>
 
                     <div className="flex items-center mt-2 text-gray-700 dark:text-gray-200">
                         <h1 className="px-2 text-sm font-bold">Gender : {bio.type}</h1>

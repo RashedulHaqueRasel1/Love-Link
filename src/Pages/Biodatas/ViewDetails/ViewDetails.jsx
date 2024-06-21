@@ -15,30 +15,25 @@ import { FaChessQueen } from "react-icons/fa6";
 const ViewDetails = () => {
 
     const bio = useLoaderData();
-    const {user} = useContext(AuthContext)
-
-    const [AllData , refetch] = useAllBioData();
-
-    // console.log(AllData) 
-
+    const { user } = useContext(AuthContext)
+    const [AllData, refetch] = useAllBioData();
     const axiosSecure = useAxiosSecure();
-    
-    refetch()
-    
 
-    // Add to Faviouret mongoDB 
+
+
+    // Add to Faviouret mongoDB Faviouret collection
     const handleAddFavourite = async (bio) => {
         // console.log(bio)
 
         const userInfo = {
-            name : bio?.name,
+            name: bio?.name,
             email: user?.email,
             id: bio?.id,
             permanent: bio?.permanentDiv,
             occupation: bio?.occupation
         }
         const favourite = await axiosSecure.post(`/favourite`, userInfo)
-        console.log(favourite.data)
+        // console.log(favourite.data)
         if (favourite.data.insertedId) {
             // show success popup
             Swal.fire({
@@ -54,16 +49,13 @@ const ViewDetails = () => {
 
     refetch()
 
-    // Premium Member
+    // Premium Member Check
     const [isPremium] = usePremium();
     // const isPremium = true;
 
 
 
     const similarBiodata = AllData.filter(b => b.type === bio.type && b.id !== bio._id).slice(0, 3);
-
-
-    // console.log(similarBiodata)
 
 
     return (
@@ -151,7 +143,7 @@ const ViewDetails = () => {
                                             </div>
                                             <div className="items-center">
                                                 <Link to={`/Checkout/${bio.id}`} className="inline-flex items-center   lg:ml-24 justify-center w-full px-4 py-3 text-base font-bold leading-6 text-white  border-transparent rounded-full md:w-auto hover:bg-indigo-500 bg-indigo-600 hover:bg-transparent hover:outline hover:text-black cursor-pointer" target="_blank" >
-                                                <FaChessQueen className="mr-2 mb-1"></FaChessQueen>  Request Contact Information 
+                                                    <FaChessQueen className="mr-2 mb-1"></FaChessQueen>  Request Contact Information
                                                 </Link>
                                             </div>
                                         </div>
