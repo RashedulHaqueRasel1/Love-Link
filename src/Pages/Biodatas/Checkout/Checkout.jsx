@@ -1,13 +1,11 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
-// import useAxiosSecure from "../../../hook/useAxiosSecure/useAxiosSecure";
 import { AuthContext } from "../../../Auth/Provider/AuthProvider";
-// import useAxiosPublic from "../../../hook/useAxiosPublic/useAxiosPublic";
 import useBioData from "../../../hook/useBioData/useBioData";
 import useAllUsers from "../../../hook/useAllUsers/useAllUsers";
 import useAxiosSecure from "../../../hook/useAxiosSecure/useAxiosSecure";
-// import useBioData from "../../../hook/useBioData/useBioData";
+
 
 const Checkout = () => {
 
@@ -143,12 +141,6 @@ const Checkout = () => {
                 refetch()
             }
         }
-
-
-
-
-
-
 
 
     }

@@ -6,11 +6,9 @@ import Footer from "../../../components/Common/Footer";
 
 
 
-
 const stripPromise = loadStripe(import.meta.env.VITE_STRIPE_PK);
 
 const Payment = () => {
-
 
 
     return (
