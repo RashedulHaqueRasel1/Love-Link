@@ -5,10 +5,10 @@ import { useState } from "react";
 
 const SuccessStories = () => {
 
-    const [storys , refetch] = useAllStory();
-
+    const [storys, refetch] = useAllStory();
     const [success, setSpots] = useState(storys);
 
+    // Handle Ascending
     const handleOne = () => {
         const a = [...success].sort(function (a, b) {
             if (a.marriageDate < b.marriageDate) {
@@ -20,6 +20,8 @@ const SuccessStories = () => {
         refetch()
     }
 
+
+    // Handle Ascending
     const handleTwo = () => {
         const b = [...success].sort(function (a, b) {
             if (a.marriageDate > b.marriageDate) {
@@ -46,6 +48,7 @@ const SuccessStories = () => {
                 </p>
             </div>
 
+            {/* Handle Ascending to Descending */}
             <div className="lg:ml-[650px]">
                 <FormControl className="w-40 bg-indigo-400">
                     <InputLabel id="demo-simple-select-label">ordering</InputLabel>
