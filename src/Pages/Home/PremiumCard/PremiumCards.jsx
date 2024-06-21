@@ -1,16 +1,14 @@
 
-import {  useState } from "react";
+import { useState } from "react";
 import useAllBioData from "../../../hook/useAllBioData/useAllBioData";
 import PremiumCard from "./PremiumCard";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import Loading from "../../../Layout/Loading/Loading";
-// import { AuthContext } from "../../../Auth/Provider/AuthProvider";
 
 
 const PremiumCards = () => {
-    // const { loading } = useContext(AuthContext);
-    const [bio, refetch] = useAllBioData();
 
+    const [bio, refetch] = useAllBioData();
     const [spots, setSpots] = useState(bio);
 
 
@@ -39,7 +37,6 @@ const PremiumCards = () => {
 
 
     refetch()
-
     // console.log(bio)
 
     if (spots > 0) {
@@ -53,8 +50,6 @@ const PremiumCards = () => {
 
             <section className="mx-auto container">
 
-
-
                 <div className="container px-6 py-10 mx-auto">
                     <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
                         Our <span className="text-blue-500 ">Premium</span> Members
@@ -64,9 +59,9 @@ const PremiumCards = () => {
                         At Matrimony, we offer a premium membership to provide you with an enhanced experience and exclusive benefits. Here s what you can expect as a Premium Member
                     </p>
 
-
                 </div>
 
+                {/* Sorting Ascending to Descending */}
                 <div className="lg:ml-[650px]">
                     <FormControl className="w-40 bg-indigo-400">
                         <InputLabel id="demo-simple-select-label">ordering</InputLabel>

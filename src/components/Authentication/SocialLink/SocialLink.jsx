@@ -16,7 +16,6 @@ const SocialLink = () => {
     const handleGoogleSignIn = () => {
 
         googleLogin()
-
             .then(result => {
                 console.log(result.user)
 
@@ -68,8 +67,6 @@ const SocialLink = () => {
                         </div>
 
                     </button>
-
-
                 </div>
 
             </div>
