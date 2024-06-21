@@ -2,6 +2,11 @@
 
 Love Link is an online matrimony platform where people can choose their life partners. 
 
+## Getting Started
+
+To get started with Love Link, visit [Love Link](your-website-url) and sign up to find your life partner.
+
+
 ## Features
 
 ### NavBar
@@ -51,6 +56,3 @@ Love Link is an online matrimony platform where people can choose their life par
 4. **Contact Us:** Reach out to us with any questions or feedback.
 5. **Dashboard:** Manage your profile, view and respond to contact requests, save favorite profiles, and share your success story.
 
-## Getting Started
-
-To get started with Love Link, visit [Love Link](your-website-url) and sign up to find your life partner.
