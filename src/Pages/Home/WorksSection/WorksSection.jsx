@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import { BsSearchHeart } from "react-icons/bs";
 import { IoCreateOutline } from "react-icons/io5";
 import { RiMessage2Line } from "react-icons/ri";
@@ -14,7 +13,7 @@ const WorksSection = () => {
                         How It Works</h1>
 
                     <p className="max-w-2xl mx-auto mt-6  text-[17px] text-center text-gray-500 dark:text-gray-300">
-                        A matrimony or online matrimonial platform works as a digital marketplace where individuals seek potential life partners. Here's how such platforms typically operate
+                        A matrimony or online matrimonial platform works as a digital marketplace where individuals seek potential life partners. Here s how such platforms typically operate .
                     </p>
 
                     <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-16 md:grid-cols-2 xl:grid-cols-3">
