@@ -9,9 +9,12 @@ const Contact = () => {
                     <div className="space-y-2">
                         <h2 className="text-4xl font-bold leading-tight lg:text-5xl">Contact Us</h2>
                     </div>
-                    {/* <img src="assets/svg/doodle.svg" alt="" className="p-6 h-52 md:h-64" /> */}
-                    <Lottie animationData={contactImg} loop={true} className="object-contain  lg:mr-24 h-96 "/>
+                    {/* Lottie File Image Added */}
+                    <Lottie animationData={contactImg} loop={true} className="object-contain  lg:mr-24 h-96 " />
+
                 </div>
+
+                {/* Contact Section Added */}
                 <form noValidate="" className="space-y-6">
                     <div>
                         <label htmlFor="name" className="text-sm">Full name</label>

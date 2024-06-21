@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import errorImg from "../../assets/error.json"
 import Lottie from "lottie-react";
@@ -20,8 +19,6 @@ const Error = () => {
                                     <h2 className="mb-16 font-extrabold text-9xl  ">
                                         <span className="sr-only ">Error</span>404
                                     </h2>
-
-
                                 </div>
 
                                 <div className="contant_box_404">
