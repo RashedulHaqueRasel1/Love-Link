@@ -13,16 +13,19 @@ const AdminRoute = ({ children }) => {
 
     const location = useLocation();
 
-    if (loading  && isAdminLoading) {
+    // Data Loading
+    if (loading && isAdminLoading) {
 
         return <Loading></Loading>
     }
 
+
+    // User && Admin Check
     if (user && isAdmin) {
         return children;
     }
 
-    return <Navigate   state={{ from: location }} replace></Navigate>;
+    return <Navigate state={{ from: location }} replace></Navigate>;
 };
 
 export default AdminRoute;
