@@ -3,17 +3,12 @@ import useAxiosSecure from "../../hook/useAxiosSecure/useAxiosSecure";
 import Swal from "sweetalert2";
 
 
-
-
-
 const GotMarried = () => {
 
     const axiosSecure = useAxiosSecure();
 
+    // React Hook From
     const { register, handleSubmit, formState: { errors }, } = useForm();
-
-
-
 
 
     const onSubmit = async (data) => {

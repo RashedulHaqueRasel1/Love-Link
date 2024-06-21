@@ -10,7 +10,6 @@ import { useQuery } from "@tanstack/react-query";
 const EditBiodata = () => {
 
     const { user } = useContext(AuthContext);
-
     const axiosSecure = useAxiosSecure();
 
     const { data: users = [], refetch } = useQuery({
@@ -20,13 +19,11 @@ const EditBiodata = () => {
             return res.data;
         }
     })
-    // const { email } = users;
-    // console.log(users)
 
+    // React hook From
     const { register, handleSubmit, formState: { errors }, } = useForm();
 
     const onSubmit = async (data) => {
-
 
         data.email = users.email;
         
@@ -57,15 +54,6 @@ const EditBiodata = () => {
             })
 
 
-        // const update = await axiosSecure.get(`/bioData/${data.email}`)
-        // console.log(update.data._id)
-
-
-
-        // const update1 = axiosSecure.patch(`/bioData/${update.data._id}`, data)
-        // console.log(update1.data)
- 
-
         refetch()
 
 
@@ -81,8 +69,7 @@ const EditBiodata = () => {
 
                     <label className="label  ">
                         <span className="label-text text-2xl font-bold text-center md:ml-48 lg:ml-[650px]">Create Your Biodata</span>
-                        {/* {email} */}
-                        {/* {biodataId && <p>Biodata ID: {biodataId}</p>} */}
+
                     </label>
 
                     <form className="space-y-6" onSubmit={handleSubmit(onSubmit)} >
@@ -489,14 +476,7 @@ const EditBiodata = () => {
                     </form>
 
 
-
-
-
-
                 </div >
-
-
-
 
 
             </div >
