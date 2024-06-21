@@ -55,8 +55,7 @@ const SuccessStory = () => {
                                 <Modal isOpen={showModal}>
                                     <div>
                                         <div className="flex flex-col justify-center lg:ml-[650px] lg:w-[500px] p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800 border-2 border-blue-200 bg-blue-300">
-                                            {/* <img src={data.photo || LogoImg} alt="" className="w-full h-56" />
-                                            img */}
+
                                             <img src={data.photo || LogoImg} alt="" />
                                             <div className="  text-center divide-y dark:divide-gray-300">
                                                 <div className=" ">

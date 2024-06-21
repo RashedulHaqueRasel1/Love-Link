@@ -15,7 +15,7 @@ const ContactRequest = () => {
         }
     })
 
-    // // Make Contact Premium
+    // // Make Contact Premium Approved Success
     const handleMakePremiumContact = (bio) => {
 
         axiosSecure.patch(`/contact/premium/${bio?._id}`, { status: "approved" })
@@ -31,6 +31,7 @@ const ContactRequest = () => {
     }
 
 
+    // Already Approved Notification
     const handleAlreadyPremium = () => {
           Swal.fire({
             position: "top-end",
@@ -47,13 +48,10 @@ const ContactRequest = () => {
     refetch()
 
 
-
-
     return (
         <div>
 
             <div className="max-w-80 container lg:max-w-[950px] ">
-
 
 
                 <div className="relative overflow-x-auto">
@@ -94,10 +92,6 @@ const ContactRequest = () => {
                                     <td className="px-6 py-4">
                                         {payment.email}
                                     </td>
-
-                                    {/* <td className="cursor-pointer">
-                                        {payment.status}
-                                    </td> */}
 
                                     <td className="px-6 py-4">
                                         {payment?.status === 'approved' ?

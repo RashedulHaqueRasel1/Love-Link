@@ -28,7 +28,7 @@ const FavouriteBioDatas = () => {
 
 
 
-    // Delete favourite Data
+    // Delete favourite Data in User
     const handleDelete = (id) => {
         // console.log(id)
 

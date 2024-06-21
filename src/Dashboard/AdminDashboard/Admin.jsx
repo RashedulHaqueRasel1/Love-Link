@@ -9,14 +9,13 @@ const Admin = () => {
     const [payment] = useAllPayments();
 
 
-
     const MaleCount = allData.filter(person => person.type === 'Male').length;
     const FemaleCount = allData.filter(person => person.type === 'Female').length;
     const PremiumCount = allData.filter(person => person.status === 'premium').length;
 
+    // Total Revenue Calculate in paymentsCollection
     const TotalRevenue = payment.reduce((total, payment) => total + payment.revenue, 0);
 
-    // console.log(TotalRevenue)
  
     return (
         <div>
@@ -30,7 +29,7 @@ const Admin = () => {
 
                             <div className="flex flex-col items-center px-20 lg:px-0  space-y-3 text-center   dark:bg-gray-800 hover:bg-blue-400  border-2 border-sky-400 bg-white bg-opacity-30   rounded-lg">
                                 <span className="inline-block p-3 text-white bg-blue-100 rounded-full dark:text-white dark:bg-blue-500">
-                                    {/* <IoCreateOutline className="text-5xl"></IoCreateOutline> */}
+
                                 </span>
                                 <h1 className="text-xl font-semibold text-black capitalize dark:text-white">Total Biodata</h1>
                                 <p className="text-black font-bold text-6xl" data-aos="fade-up">
@@ -40,7 +39,7 @@ const Admin = () => {
 
                             <div className="flex flex-col items-center px-20 lg:px-0 space-y-3 text-center   dark:bg-gray-800 hover:bg-blue-400  border-2 border-sky-400   rounded-lg bg-white bg-opacity-30 ">
                                 <span className="inline-block p-3 text-white bg-blue-100 rounded-full dark:text-white dark:bg-blue-500">
-                                    {/* <IoCreateOutline className="text-5xl"></IoCreateOutline> */}
+                                    
                                 </span>
                                 <h1 className="text-xl font-semibold text-black capitalize dark:text-white">Male Biodata</h1>
                                 <p className="text-black font-bold text-6xl" data-aos="fade-up">
@@ -50,7 +49,7 @@ const Admin = () => {
 
                             <div className="flex flex-col items-center px-20 lg:px-0  space-y-3 text-center   dark:bg-gray-800 hover:bg-blue-400  border-2 border-sky-400   rounded-lg bg-white bg-opacity-30 ">
                                 <span className="inline-block p-3 text-white bg-blue-100 rounded-full dark:text-white dark:bg-blue-500">
-                                    {/* <IoCreateOutline className="text-5xl"></IoCreateOutline> */}
+                                   
                                 </span>
                                 <h1 className="text-xl font-semibold text-black capitalize dark:text-white">Female Biodata</h1>
                                 <p className="text-black font-bold text-6xl" data-aos="fade-up">
@@ -60,7 +59,7 @@ const Admin = () => {
 
                             <div className="flex flex-col items-center px-20 lg:px-0  space-y-3 text-center   dark:bg-gray-800 hover:bg-blue-400  border-2 border-sky-400   rounded-lg bg-white bg-opacity-30 ">
                                 <span className="inline-block p-3 text-white bg-blue-100 rounded-full dark:text-white dark:bg-blue-500">
-                                    {/* <IoCreateOutline className="text-5xl"></IoCreateOutline> */}
+                                    
                                 </span>
                                 <h1 className="text-xl font-semibold text-black capitalize dark:text-white">Total Premium</h1>
                                 <p className="text-black font-bold text-6xl" data-aos="fade-up">
@@ -70,7 +69,7 @@ const Admin = () => {
 
                             <div className="flex flex-col items-center px-20 lg:px-0  space-y-3 text-center   dark:bg-gray-800 hover:bg-blue-400  border-2 border-sky-400   rounded-lg bg-white bg-opacity-30 ">
                                 <span className="inline-block p-3 text-white bg-blue-100 rounded-full dark:text-white dark:bg-blue-500">
-                                    {/* <IoCreateOutline className="text-5xl"></IoCreateOutline> */}
+                                   
                                 </span>
                                 <h1 className="text-xl font-semibold text-black capitalize dark:text-white">Total Revenue</h1>
                                 <p className="text-black font-bold text-6xl" data-aos="fade-up">

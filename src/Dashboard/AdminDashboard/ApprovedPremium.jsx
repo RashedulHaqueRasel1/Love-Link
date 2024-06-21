@@ -35,8 +35,6 @@ const ApprovedPremium = () => {
 
             <div className="max-w-80 container lg:max-w-[950px] ">
 
-
-
                 <div className="relative overflow-x-auto">
 
                     <div className="mt-10 mb-16">

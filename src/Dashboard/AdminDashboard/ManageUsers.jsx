@@ -2,19 +2,12 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../hook/useAxiosSecure/useAxiosSecure";
 import Swal from "sweetalert2";
 import useBioData from "../../hook/useBioData/useBioData";
-// import Swal from "sweetalert2";
-
-
-
-
-
-
-
 
 
 const ManageUsers = () => {
 
     const axiosSecure = useAxiosSecure();
+    const [bio] = useBioData();
 
     const { data: users = [], refetch } = useQuery({
         queryKey: ['users'],
@@ -25,16 +18,7 @@ const ManageUsers = () => {
     })
 
 
-
-
-
-
-    console.log(users)
-
-
-
-
-    // // Admin Make 
+    // // Admin Make in Admin
 
     const handleMakeAdmin = (user) => {
 
@@ -55,12 +39,14 @@ const ManageUsers = () => {
                     text: "Now This Member is Admin !",
                     icon: "success"
                 });
-                    refetch()
+                refetch()
             }
         });
     }
 
 
+
+    // Already Approved Notification
     const handleAlreadyAdmin = () => {
         Swal.fire({
             position: "top-center",
@@ -75,11 +61,7 @@ const ManageUsers = () => {
 
 
 
-    const [bio] = useBioData();
-
-    // console.log(bio)
-
-    // // Premium Make 
+    // // Premium Make in Admin 
     const handleMakePremium = (bio) => {
         // console.log(bio,'aaaaaaa')
 
@@ -103,8 +85,6 @@ const ManageUsers = () => {
 
     return (
         <div className="max-w-80 container lg:max-w-[950px] ">
-
-
 
             <div className="relative overflow-x-auto">
 
