@@ -17,10 +17,8 @@ const Registration = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [errorPassword, setErrorPassword] = useState("");
     const { createUser, userUpdateProfile } = useContext(AuthContext);
-    // const axiosPublic = UseAxiosPublic();
 
     const navigation = useNavigate();
-
 
     const {
         register,
@@ -29,19 +27,11 @@ const Registration = () => {
         formState: { errors },
     } = useForm()
 
-
-
-
     const onSubmit = (data) => {
 
+        const { email, password, photo } = data;
 
-
-
-
-        const { email, password,  photo} = data;
-
-   
-
+        // Password Lowe Case Upper Case & 6 characters check
 
         if (password.length < 6) {
             setErrorPassword("Password should be at least 6 characters or longer ")
@@ -56,8 +46,6 @@ const Registration = () => {
             return;
         }
 
-        // console.log(data)
-
 
         // create User
         createUser(email, password)
@@ -67,7 +55,7 @@ const Registration = () => {
 
                 userUpdateProfile(name, photo)
                     .then(() => {
-                        // console.log('update profile')
+
                         // create user save Data in MongoDB
                         const userInfo = {
                             name: data.name,
@@ -119,7 +107,6 @@ const Registration = () => {
 
     return (
         <div>
-
 
             <section className="py-16">
 
