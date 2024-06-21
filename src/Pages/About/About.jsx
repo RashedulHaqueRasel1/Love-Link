@@ -54,7 +54,8 @@ const About = () => {
                         </p>
                     </div>
                     <div>
-                    <Lottie animationData={aboutImg} loop={true} className="object-contain  lg:ml-10 h-96 "/>
+                        {/* Lottie img added */}
+                        <Lottie animationData={aboutImg} loop={true} className="object-contain  lg:ml-10 h-96 " />
                     </div>
                 </div>
 
