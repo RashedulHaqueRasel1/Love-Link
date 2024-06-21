@@ -14,7 +14,8 @@ const useAllUsers = () => {
         queryFn: async () => {
             const res = await axiosSecure.get(`/users/${user?.email}`)
             return res.data;
-        }
+        },
+        enabled: !!user?.email
     })
 
 

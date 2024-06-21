@@ -6,10 +6,10 @@ import useAxiosSecure from "../useAxiosSecure/useAxiosSecure";
 
 
 const UseAdmin = () => {
+
 	const { user } = useContext(AuthContext)
 
     const axiosSecure = useAxiosSecure();
-
 
     const {data: isAdmin, isPending: isAdminLoading} = useQuery({
         queryKey: [user?.email , 'isAdmin'],
@@ -19,8 +19,7 @@ const UseAdmin = () => {
              return res.data?.admin;
         },
         enabled: !!user?.email
-
-        
+ 
 
     })
     

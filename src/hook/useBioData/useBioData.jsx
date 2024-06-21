@@ -5,12 +5,9 @@ import { useQuery } from "@tanstack/react-query";
 
 const useBioData = () => {
 
-
     const { user } = useContext(AuthContext);
 
-
     const axiosSecure = useAxiosSecure();
-
 
     const { data: bio = [] , refetch} = useQuery({
         queryKey: ['bio',user?.email],
@@ -18,7 +15,8 @@ const useBioData = () => {
             const res = await axiosSecure.get(`/bioData/${user?.email}`)
             return res.data;
 
-        }
+        },
+        enabled: !!user?.email
 
     })
 

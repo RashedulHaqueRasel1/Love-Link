@@ -3,9 +3,7 @@ import useAxiosSecure from "../useAxiosSecure/useAxiosSecure";
 
 const useAllBioData = () => {
 
-
     const axiosSecure = useAxiosSecure();
-
 
     const { data: bio = [], refetch } = useQuery({
         queryKey: ['bio'],

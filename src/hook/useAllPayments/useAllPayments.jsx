@@ -3,10 +3,7 @@ import useAxiosSecure from "../useAxiosSecure/useAxiosSecure";
 
 const useAllPayments = () => {
 
-
-    
     const axiosSecure = useAxiosSecure();
-
 
     const { data: payment = [], refetch } = useQuery({
         queryKey: ['payments'],

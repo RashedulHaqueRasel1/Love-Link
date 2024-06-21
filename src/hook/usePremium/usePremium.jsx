@@ -8,7 +8,6 @@ const usePremium = () => {
 
     const axiosSecure = useAxiosSecure();
 
-
     const {data: isPremium} = useQuery({
         queryKey: [user?.email , 'isPremium'],
         queryFn: async() => {

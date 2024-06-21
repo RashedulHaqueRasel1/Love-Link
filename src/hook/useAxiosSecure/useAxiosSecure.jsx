@@ -6,6 +6,8 @@ import { AuthContext } from '../../Auth/Provider/AuthProvider'
 const axiosSecure = axios.create({
 	baseURL: 'https://love-link-server-nine.vercel.app',
 })
+
+
 const useAxiosSecure = () => {
 	const navigation = useNavigate()
 
