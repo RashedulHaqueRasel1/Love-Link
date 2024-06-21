@@ -1,6 +1,4 @@
-// import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-// import LogoImg from "../../assets/img1.jpg"
 import login from "../../assets/login.json"
 import SocialLink from "./SocialLink/SocialLink";
 import { useContext, useState } from "react";
@@ -24,7 +22,6 @@ const Login = () => {
 
     const from = location.state?.from?.pathname || "/";
 
-
     const {
         register,
         handleSubmit,
@@ -32,16 +29,9 @@ const Login = () => {
     } = useForm()
 
 
-
-
     const onSubmit = (data) => {
 
-
-        // console.log(data)
-
-
         const { email, password } = data;
-
 
         if (password.length < 6) {
             setErrorPassword("Password should be at least 6 characters or longer ")
@@ -56,12 +46,9 @@ const Login = () => {
             return;
         }
 
-        console.log(data)
+        // console.log(data)
 
-
-
-        // signIn User
-
+        // signIn User 
         signIn(email, password)
             .then(result => {
                 const logInUser = result.user;
@@ -92,17 +79,12 @@ const Login = () => {
 
     return (
         <div>
-
-
-
-
             <section className=" ">
 
                 <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
 
                     <div className="flex items-center justify-center p-6   lg:mt-0 h-72 sm:h-80 lg:h-32 xl:h-112 2xl:h-128">
-                        {/* <img src={LogoImg} alt="" className="object-contain h-[700px] sm:h-80 lg:h-96 xl:h-112 2xl:h-128" /> */}
-                        <Lottie animationData={login} loop={true} className="object-contain  lg:mt-96 lg:ml-48 h-96 lg:h-[850px]"/>
+                        <Lottie animationData={login} loop={true} className="object-contain  lg:mt-96 lg:ml-48 h-96 lg:h-[850px]" />
                     </div>
 
                     <div className="card shrink-0 w-full p-6 max-w-sm shadow-2xl bg-base-100 border-2 border-blue-200  rounded-3xl  hover:bg-blue-200 " style={{ boxShadow: 'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px' }}>
