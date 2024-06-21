@@ -11,9 +11,7 @@ const Counter = () => {
 
     const MaleCount = allData.filter(person => person.type === 'Male').length;
     const FemaleCount = allData.filter(person => person.type === 'Female').length;
-    // const storyCount = allData.filter(person => person.type === 'Male').length;
 
-    // console.log(FemaleCount)
 
 
     return (
@@ -37,7 +35,7 @@ const Counter = () => {
                         
                         <div className="flex flex-col items-center p-6 space-y-3 text-center   dark:bg-gray-800 hover:bg-blue-400  border-2 border-sky-400 bg-white bg-opacity-30   rounded-lg">
                             <span className="inline-block p-3 text-white bg-blue-100 rounded-full dark:text-white dark:bg-blue-500">
-                                {/* <IoCreateOutline className="text-5xl"></IoCreateOutline> */}
+
                             </span>
                             <h1 className="text-xl font-semibold text-black capitalize dark:text-white">Total Biodata</h1>
                             <p className="text-black font-bold text-6xl" data-aos="fade-up">
@@ -47,7 +45,7 @@ const Counter = () => {
                         
                         <div className="flex flex-col items-center p-6 space-y-3 text-center   dark:bg-gray-800 hover:bg-blue-400  border-2 border-sky-400   rounded-lg bg-white bg-opacity-30 ">
                             <span className="inline-block p-3 text-white bg-blue-100 rounded-full dark:text-white dark:bg-blue-500">
-                                {/* <IoCreateOutline className="text-5xl"></IoCreateOutline> */}
+
                             </span>
                             <h1 className="text-xl font-semibold text-black capitalize dark:text-white">Male Biodata</h1>
                             <p className="text-black font-bold text-6xl" data-aos="fade-up">
@@ -57,7 +55,7 @@ const Counter = () => {
                         
                         <div className="flex flex-col items-center p-6 space-y-3 text-center   dark:bg-gray-800 hover:bg-blue-400  border-2 border-sky-400   rounded-lg bg-white bg-opacity-30 ">
                             <span className="inline-block p-3 text-white bg-blue-100 rounded-full dark:text-white dark:bg-blue-500">
-                                {/* <IoCreateOutline className="text-5xl"></IoCreateOutline> */}
+
                             </span>
                             <h1 className="text-xl font-semibold text-black capitalize dark:text-white">Female Biodata</h1>
                             <p className="text-black font-bold text-6xl" data-aos="fade-up">
@@ -67,19 +65,13 @@ const Counter = () => {
                         
                         <div className="flex flex-col items-center p-6 space-y-3 text-center   dark:bg-gray-800 hover:bg-blue-400  border-2 border-sky-400   rounded-lg bg-white bg-opacity-30 ">
                             <span className="inline-block p-3 text-white bg-blue-100 rounded-full dark:text-white dark:bg-blue-500">
-                                {/* <IoCreateOutline className="text-5xl"></IoCreateOutline> */}
+
                             </span>
                             <h1 className="text-xl font-semibold text-black capitalize dark:text-white">Total Marriages</h1>
                             <p className="text-black font-bold text-6xl" data-aos="fade-up">
                                 {story.length}
                             </p>
                         </div>
-
-
-
- 
-
-
 
                     </div>
                 </div>
