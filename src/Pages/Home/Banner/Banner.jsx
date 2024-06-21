@@ -33,16 +33,16 @@ const Banner = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <BannerImg img={img1} title={'lorem1'} text={'hhhhhhhhhhhhhhhhhhhh1'}></BannerImg>
+          <BannerImg img={img1} title={'Find Your Perfect Match Today'} text={'Start your journey to find the love of your life. Join our community and meet like-minded individuals who are ready to commit to a lifelong partnership.'}></BannerImg>
         </SwiperSlide>
         <SwiperSlide>
-          <BannerImg img={img2} title={'lorem2'} text={'hhhhhhhhhhhhhhhhhhhh2'}></BannerImg>
+          <BannerImg img={img2} title={'Connecting Hearts, Building Futures'} text={'At Love Link Matrimony, we believe in creating meaningful connections that last a lifetime. Our platform brings together hearts and minds to build beautiful futures together.'}></BannerImg>
         </SwiperSlide>
         <SwiperSlide>
-          <BannerImg img={img3} title={'lorem3'} text={'hhhhhhhhhhhhhhhhhhhh3'}></BannerImg>
+          <BannerImg img={img3} title={'Matchmaking Made Easy'} text={'Finding your soulmate has never been easier. With Love Link Matrimony, enjoy a seamless and efficient matchmaking experience tailored to your preferences.'}></BannerImg>
         </SwiperSlide>
         <SwiperSlide>
-          <BannerImg img={img4} title={'lorem4'} text={'hhhhhhhhhhhhhhhhhhhh4'}></BannerImg>
+          <BannerImg img={img4} title={'Bringing Soulmates Together'} text={'We specialize in bringing soulmates together. Join our community and let us help you find the person who complements you perfectly.'}></BannerImg>
         </SwiperSlide>
       </Swiper>
     </>

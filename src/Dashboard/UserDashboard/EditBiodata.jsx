@@ -1,42 +1,72 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-// import { useNavigate } from "react-router-dom";
-// import Swal from "sweetalert2";
 import { AuthContext } from "../../Auth/Provider/AuthProvider";
+import useAxiosSecure from "../../hook/useAxiosSecure/useAxiosSecure";
+import Swal from "sweetalert2";
+import { useQuery } from "@tanstack/react-query";
+
+
 
 const EditBiodata = () => {
 
     const { user } = useContext(AuthContext);
 
+    const axiosSecure = useAxiosSecure();
 
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm()
-
-    const onSubmit = (data) => {
-
-        const userInfo = {
-            email: user?.email,
-            age: data.age,
-            dateOfBirth: data.dateOfBirth,
-            fathersName: data.fathersName,
-            hight: data.hight,
-            mobileNumber: data.mobileNumber,
-            mothersName: data.mothersName,
-            name: data.name,
-            occupation: data.occupation,
-            partnerAge: data.partnerAge,
-            partnerHeight: data.partnerHeight,
-            permanentDiv: data.permanentDiv,
-            photo: data.photo,
-            presentDiv: data.presentDiv,
-            race: data.race,
-            type: data.type,
-            weight: data.weight
+    const { data: users = [], refetch } = useQuery({
+        queryKey: ['users',user?.email],
+        queryFn: async () => {
+            const res = await axiosSecure.get(`/users/${user?.email}`)
+            return res.data;
         }
-        console.log(userInfo)
+    })
+    // const { email } = users;
+    // console.log(users)
+
+    const { register, handleSubmit, formState: { errors }, } = useForm();
+
+    const onSubmit = async (data) => {
+
+
+        data.email = users.email;
+        
+        axiosSecure.post(`/bioData`, data)
+            .then(res => {
+                // console.log(res.data)
+                if (res.data.insertedId) {
+                    Swal.fire({
+                        position: "top-right",
+                        icon: "success",
+                        title: `Your Data has been save`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                } else {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Your Data Already Save",
+                        footer: '<a href="#">Why do I have this issue?</a>'
+                      });
+                }
+
+
+            })
+            .catch(error => {
+                alert(error, "no data")
+            })
+
+
+        // const update = await axiosSecure.get(`/bioData/${data.email}`)
+        // console.log(update.data._id)
+
+
+
+        // const update1 = axiosSecure.patch(`/bioData/${update.data._id}`, data)
+        // console.log(update1.data)
+ 
+
+        refetch()
 
 
     }
@@ -47,10 +77,12 @@ const EditBiodata = () => {
         <div>
             <div className="  mx-auto container   " style={{ boxShadow: 'box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px' }}    >
 
-                <div className="  items-center  shadow-2xl bg-base-100   p-10 space-y-6 rounded-xl container mx-auto   border-red-500" style={{ boxShadow: 'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px' }}  >
+                <div className="  items-center  shadow-2xl bg-base-100   p-10 space-y-6 r  container mx-auto border-2 border-blue-200 bg-blue-200 rounded-2xl mt-4  hover:bg-blue-300" style={{ boxShadow: 'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px' }}  >
 
                     <label className="label  ">
-                        <span className="label-text text-2xl font-bold text-center md:ml-48 lg:ml-[650px]">Biodata From</span>
+                        <span className="label-text text-2xl font-bold text-center md:ml-48 lg:ml-[650px]">Create Your Biodata</span>
+                        {/* {email} */}
+                        {/* {biodataId && <p>Biodata ID: {biodataId}</p>} */}
                     </label>
 
                     <form className="space-y-6" onSubmit={handleSubmit(onSubmit)} >
@@ -75,7 +107,7 @@ const EditBiodata = () => {
                                     <span className="label-text font-bold">Name</span>
                                 </label>
                                 <div>
-                                    <input type="text" name="name" id="name" placeholder="Name" className="input input-bordered lg:w-[600px] w-full    border-blue-300   focus:dark:border-blue-500   dark:bg-gray-400" {...register("name", { required: true })} />
+                                    <input type="text" name="name" id="name"   className="input input-bordered lg:w-[600px] w-full    border-blue-300   focus:dark:border-blue-500   dark:bg-gray-400" {...register("name", { required: true })} />
                                 </div>
                                 {errors.name && <span className="text-red-600 font-bold">This field is required</span>}
 

@@ -7,14 +7,16 @@ import { AuthContext } from "../../Auth/Provider/AuthProvider";
 import Swal from "sweetalert2";
 import reg from "../../assets/reg.json"
 import Lottie from "lottie-react";
+import useAxiosPublic from "../../hook/useAxiosPublic/useAxiosPublic";
 
 
 
 const Registration = () => {
 
+    const axiosPublic = useAxiosPublic();
     const [showPassword, setShowPassword] = useState(false);
     const [errorPassword, setErrorPassword] = useState("");
-    const { createUser } = useContext(AuthContext);
+    const { createUser, userUpdateProfile } = useContext(AuthContext);
     // const axiosPublic = UseAxiosPublic();
 
     const navigation = useNavigate();
@@ -23,6 +25,7 @@ const Registration = () => {
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm()
 
@@ -32,10 +35,12 @@ const Registration = () => {
     const onSubmit = (data) => {
 
 
-        // console.log(data)
 
 
-        const { email, password } = data;
+
+        const { email, password,  photo} = data;
+
+   
 
 
         if (password.length < 6) {
@@ -51,45 +56,43 @@ const Registration = () => {
             return;
         }
 
-        console.log(data)
+        // console.log(data)
 
 
         // create User
         createUser(email, password)
             .then(result => {
                 console.log(result.user)
-                Swal.fire({
-                    title: "Registration Success!",
-                    text: "congratulations! Well Come Your Website.",
-                    icon: "success"
-                });
+                console.log(result.user?.photoURL)
 
-                // userUpdateProfile(name, photo)
-                //     .then(() => {
-                //         // console.log('update profile')
-                //         // create user save Data in MongoDB
-                //         const userInfo = {
-                //             name: data.name,
-                //             email: data.email
-                //         }
-                //         axiosPublic.post('/users', userInfo)
-                //             .then(res => {
-                //                 // console.log(res.data)
-                //                 if (res.data.insertedId) {
-                //                     Swal.fire({
-                //                         title: "LogIn Success!",
-                //                         text: "You clicked the button!",
-                //                         icon: "success"
-                //                     });
-                //                 }
-                //             })
+                userUpdateProfile(name, photo)
+                    .then(() => {
+                        // console.log('update profile')
+                        // create user save Data in MongoDB
+                        const userInfo = {
+                            name: data.name,
+                            email: data.email,
+                            photo: data.photoURL,
+                            password: data.password
+                        }
+                        axiosPublic.post('/users', userInfo)
+                            .then(res => {
+                                // console.log(res.data)
+                                if (res.data.insertedId) {
+                                    Swal.fire({
+                                        title: "Registration Success!",
+                                        text: "congratulations! Well Come Your Website.",
+                                        icon: "success"
+                                    });
+                                }
+                            })
 
 
-                //     })
-                //     .catch((error) => {
-                //         console.log(error)
-                //     })
-                // reset()
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                    })
+                reset()
 
                 navigation('/')
 

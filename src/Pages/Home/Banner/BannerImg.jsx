@@ -16,7 +16,7 @@ const BannerImg = ({ img, title, text }) => {
                         {title}
                     </h1>
                     <br />
-                    <p className='w-full px-5 py-4 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform   rounded-md lg:w-auto   focus:outline-none  '>
+                    <p className=' w-3/4 ml-32  text-xl font-medium text-white '>
                         {text}
                     </p>
                 </div>

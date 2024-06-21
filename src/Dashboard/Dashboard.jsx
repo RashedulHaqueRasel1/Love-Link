@@ -3,13 +3,15 @@
 import { useContext, useState } from "react";
 import { IoEyeOutline, IoMenu } from "react-icons/io5";
 import { MdClose, MdOutlineWorkspacePremium } from "react-icons/md";
-import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { FcAssistant, FcEditImage, FcImport, FcLike, FcPositiveDynamic, FcProcess } from "react-icons/fc";
 import LogoImg from "../assets/Logo.png"
 import { AuthContext } from "../Auth/Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { FaUsersGear } from "react-icons/fa6";
 import { GiLovers } from "react-icons/gi";
+import UseAdmin from "../hook/useAdmin/useAdmin";
+import { FaRegSmileBeam } from "react-icons/fa";
 
 
 
@@ -36,7 +38,12 @@ const Dashboard = () => {
 
 
     const [open, setOpen] = useState(false);
-    const isAdmin = true;
+
+    // Admin Check
+    // const isAdmin = true;
+    const [isAdmin] = UseAdmin();
+    // console.log(isAdmin)
+
 
 
 
@@ -44,7 +51,7 @@ const Dashboard = () => {
         <div>
 
             <div>
-                <div className=" md:hidden bg-slate-700  p-6" onClick={() => setOpen(!open)}>
+                <div className=" md:hidden bg-slate-700   p-6" onClick={() => setOpen(!open)}>
                     <div>
                         {
                             open === true ? <MdClose className="text-2xl" /> : <IoMenu className="text-2xl " />
@@ -58,9 +65,9 @@ const Dashboard = () => {
 
 
 
-            <div className="flex">
+            <div className="flex ">
                 <div>
-                    <ul className={`md:flex absolute md:static p-2   md:ml-0 w-64 h-full  duration-1000 bg-slate-700  rounded-lg md:rounded-none ${open === true ? '-left-1' : '-left-[600px]'}`}>
+                    <ul className={`md:flex absolute md:static p-2   md:ml-0 w-64 lg:h-full h-[900px]  duration-1000 bg-slate-700  rounded-lg md:rounded-none ${open === true ? '-left-1' : '-left-[600px]'} z-50`}>
                         <ul className="menu ">
                             <Link to={'/'}>
                                 <button>
@@ -83,54 +90,54 @@ const Dashboard = () => {
 
 
                                     <>
-                                        <div className="divide-y dark:divide-gray-300">
+                                        <div className="divide-y  ">
                                             {/* Admin ++ user */}
                                             <div>
 
                                                 <h1 className="text-center text-rose-400 font-bold border text-4xl">User</h1>
                                                 <li>
-                                                    <NavLink to={'/dashboard/EditBiodata'}>
-                                                        <div className="flex mt-4   hover:bg-indigo-600  p-2 hover:rounded-3xl">
+                                                    <Link to={'/dashboard/EditBiodata'}>
+                                                        <div className="flex mt-4  hover:bg-indigo-600  p-2 hover:rounded-3xl">
                                                             <FcEditImage className="text-2xl"></FcEditImage>
                                                             <span className="text-[16px] font-bold text-white ml-2">Edit Biodata</span>
                                                         </div>
-                                                    </NavLink>
+                                                    </Link>
                                                 </li>
 
                                                 <li>
-                                                    <NavLink to={'/dashboard/reservation'}>
+                                                    <Link to={'/dashboard/viewBioData'}>
                                                         <div className="flex mt-4 hover:bg-indigo-600  p-2 rounded-3xl">
                                                             <IoEyeOutline className="text-2xl"></IoEyeOutline >
                                                             <span className="text-[16px] font-bold text-white ml-2">View Biodata</span>
                                                         </div>
-                                                    </NavLink>
+                                                    </Link>
                                                 </li>
 
                                                 <li>
-                                                    <NavLink to={'/dashboard/reservation'}>
+                                                    <Link to={'/dashboard/MyContactRequest'}>
                                                         <div className="flex mt-4 hover:bg-indigo-600  p-2 rounded-3xl">
                                                             <FcProcess className="text-2xl"></FcProcess>
                                                             <span className="text-[16px] font-bold text-white ml-2">My Contact Request</span>
                                                         </div>
-                                                    </NavLink>
+                                                    </Link>
                                                 </li>
 
                                                 <li>
-                                                    <NavLink to={'/dashboard/reservation'}>
+                                                    <Link to={'/dashboard/favourite'}>
                                                         <div className="flex mt-4 hover:bg-indigo-600  p-2 rounded-3xl">
                                                             <FcLike className="text-2xl"></FcLike >
                                                             <span className="text-[16px] font-bold text-white ml-2">Favourite Biodata</span>
                                                         </div>
-                                                    </NavLink>
+                                                    </Link>
                                                 </li>
 
                                                 <li>
-                                                    <NavLink to={'/dashboard/reservation'}>
+                                                    <Link to={'/dashboard/gotMarried'}>
                                                         <div className="flex mt-4 hover:bg-indigo-600  p-2 rounded-3xl">
                                                             <GiLovers className="text-2xl"></GiLovers >
                                                             <span className="text-[16px] font-bold text-white ml-2">Got Married</span>
                                                         </div>
-                                                    </NavLink>
+                                                    </Link>
                                                 </li>
                                             </div>
 
@@ -140,41 +147,50 @@ const Dashboard = () => {
                                             <div>
                                                 <h1 className="text-center text-rose-400 font-bold border text-4xl mt-6">Admin</h1>
                                                 <li>
-                                                    <NavLink to={'/dashboard/reservation'}>
+                                                    <Link to={'/dashboard/admin'}>
                                                         <div className="flex mt-4 hover:bg-indigo-600  p-2 rounded-3xl">
                                                             <FcPositiveDynamic className="text-2xl"></FcPositiveDynamic >
                                                             <span className="text-[16px] font-bold text-white ml-2">Admin Dashboard</span>
                                                         </div>
-                                                    </NavLink>
+                                                    </Link>
                                                 </li>
 
 
                                                 <li>
-                                                    <NavLink to={'/dashboard/reservation'}>
+                                                    <Link to={'/dashboard/manageUsers'}>
                                                         <div className="flex mt-4 hover:bg-indigo-600  p-2 rounded-3xl">
                                                             <FaUsersGear className="text-2xl"></FaUsersGear >
                                                             <span className="text-[16px] font-bold text-white ml-2">Manage Users</span>
                                                         </div>
-                                                    </NavLink>
+                                                    </Link>
                                                 </li>
 
 
                                                 <li>
-                                                    <NavLink to={'/dashboard/reservation'}>
+                                                    <Link to={'/dashboard/ApprovedPremium'}>
                                                         <div className="flex mt-4 hover:bg-indigo-600  p-2 rounded-3xl">
                                                             <MdOutlineWorkspacePremium className="text-2xl"></MdOutlineWorkspacePremium  >
                                                             <span className="text-[16px] font-bold text-white ml-2">Approved Premium</span>
                                                         </div>
-                                                    </NavLink>
+                                                    </Link>
                                                 </li>
 
                                                 <li>
-                                                    <NavLink to={'/dashboard/reservation'}>
+                                                    <Link to={'/dashboard/ContactRequest'}>
                                                         <div className="flex mt-4 hover:bg-indigo-600  p-2 rounded-3xl">
                                                             <FcAssistant className="text-2xl"></FcAssistant >
                                                             <span className="text-[16px] font-bold text-white ml-2">Approved Contact Request</span>
                                                         </div>
-                                                    </NavLink>
+                                                    </Link>
+                                                </li>
+
+                                                <li>
+                                                    <Link to={'/dashboard/successStory'}>
+                                                        <div className="flex mt-4 hover:bg-indigo-600  p-2 rounded-3xl">
+                                                            <FaRegSmileBeam className="text-2xl"></FaRegSmileBeam >
+                                                            <span className="text-[16px] font-bold text-white ml-2">Success Story</span>
+                                                        </div>
+                                                    </Link>
                                                 </li>
                                             </div>
 
@@ -191,48 +207,48 @@ const Dashboard = () => {
 
                                         {/* Normal User */}
                                         <li>
-                                            <NavLink to={'/'}>
+                                            <Link to={'/dashboard/EditBiodata'}>
                                                 <div className="flex mt-4   hover:bg-indigo-600  p-2 hover:rounded-3xl">
                                                     <FcEditImage className="text-2xl"></FcEditImage>
                                                     <span className="text-[16px] font-bold text-white ml-2">Edit Biodata</span>
                                                 </div>
-                                            </NavLink>
+                                            </Link>
                                         </li>
 
                                         <li>
-                                            <NavLink to={'/dashboard/reservation'}>
+                                            <Link to={'/dashboard/viewBioData'}>
                                                 <div className="flex mt-4 hover:bg-indigo-600  p-2 rounded-3xl">
                                                     <IoEyeOutline className="text-2xl"></IoEyeOutline >
                                                     <span className="text-[16px] font-bold text-white ml-2">View Biodata</span>
                                                 </div>
-                                            </NavLink>
+                                            </Link>
                                         </li>
 
                                         <li>
-                                            <NavLink to={'/dashboard/reservation'}>
+                                            <Link to={'/dashboard/MyContactRequest'}>
                                                 <div className="flex mt-4 hover:bg-indigo-600  p-2 rounded-3xl">
                                                     <FcProcess className="text-2xl"></FcProcess>
                                                     <span className="text-[16px] font-bold text-white ml-2">My Contact Request</span>
                                                 </div>
-                                            </NavLink>
+                                            </Link>
                                         </li>
 
                                         <li>
-                                            <NavLink to={'/dashboard/reservation'}>
+                                            <Link to={'/dashboard/favourite'}>
                                                 <div className="flex mt-4 hover:bg-indigo-600  p-2 rounded-3xl">
                                                     <FcLike className="text-2xl"></FcLike >
                                                     <span className="text-[16px] font-bold text-white ml-2">Favourite Biodata</span>
                                                 </div>
-                                            </NavLink>
+                                            </Link>
                                         </li>
 
                                         <li>
-                                            <NavLink to={'/dashboard/reservation'}>
+                                            <Link to={'/dashboard/gotMarried'}>
                                                 <div className="flex mt-4 hover:bg-indigo-600  p-2 rounded-3xl">
                                                     <GiLovers className="text-2xl"></GiLovers >
                                                     <span className="text-[16px] font-bold text-white ml-2">Got Married</span>
                                                 </div>
-                                            </NavLink>
+                                            </Link>
                                         </li>
 
 
@@ -240,13 +256,13 @@ const Dashboard = () => {
                                     </>
                             }
 
-                            <li className='lg:mt-40'>
-                                <NavLink onClick={handleLogOut} >
+                            <li className='lg:mt-16'>
+                                <Link onClick={handleLogOut} >
                                     <div className="flex mt-4 hover:bg-indigo-600  p-2 rounded-3xl">
                                         <FcImport className="text-2xl"></FcImport >
                                         <span className="text-[16px] font-bold text-white ml-2">Logout</span>
                                     </div>
-                                </NavLink>
+                                </Link>
                             </li>
 
 

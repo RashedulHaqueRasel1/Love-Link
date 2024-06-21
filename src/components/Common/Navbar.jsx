@@ -28,23 +28,23 @@ const Navbar = () => {
     }
 
     const navOption = <>
-        <li className='inline-flex items-center justify-center w-full px-7 py-4 text-base font-bold leading-6  text-white  border-transparent rounded-full md:w-auto hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 ' >
-            <NavLink to={'/'} className=''>Home</NavLink>
+        <li>
+            <NavLink to={'/'} className='inline-flex items-center justify-center w-full px-7 py-4 text-base font-bold leading-6  text-white  border-transparent rounded-full md:w-auto hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 ' >Home</NavLink>
         </li>
 
-        <li className='inline-flex items-center justify-center w-full px-7 py-4 text-base font-bold leading-6 text-white  border-transparent rounded-full md:w-auto hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600'>
-            <NavLink to={'/ourShop/salad'}>Biodatas</NavLink>
+        <li>
+            <NavLink to={'/bioDatas'} className='inline-flex items-center justify-center w-full px-7 py-4 text-base font-bold leading-6 text-white  border-transparent rounded-full md:w-auto hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600'>Biodatas</NavLink>
         </li>
-        <li className='inline-flex items-center justify-center w-full px-7 py-4 text-base font-bold leading-6 text-white  border-transparent rounded-full md:w-auto hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600'>
-            <NavLink to={'/ourShop/salad'}>About Us</NavLink>
+        <li>
+            <NavLink to={'/about'} className='inline-flex items-center justify-center w-full px-7 py-4 text-base font-bold leading-6 text-white  border-transparent rounded-full md:w-auto hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600'>About Us</NavLink>
         </li>
-        <li className='inline-flex items-center justify-center w-full px-7 py-4 text-base font-bold leading-6 text-white  border-transparent rounded-full md:w-auto hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600'>
-            <NavLink to={'/ourShop/salad'}>Contact Us</NavLink>
+        <li>
+            <NavLink to={'/contact'} className='inline-flex items-center justify-center w-full px-7 py-4 text-base font-bold leading-6 text-white  border-transparent rounded-full md:w-auto hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600'>Contact Us</NavLink>
         </li>
 
         {
-            user && <li className='inline-flex items-center justify-center w-full px-7 py-4 text-base font-bold leading-6 text-white  border-transparent rounded-full md:w-auto hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600'>
-                <NavLink to={'/dashboard/EditBiodata'}>Dashboard</NavLink>
+            user && <li>
+                <NavLink to={'/dashboard/EditBiodata'} className='inline-flex items-center justify-center w-full px-7 py-4 text-base font-bold leading-6 text-white  border-transparent rounded-full md:w-auto hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600'>Dashboard</NavLink>
             </li>
         }
     </>
@@ -92,7 +92,7 @@ const Navbar = () => {
                         </div>
                     </div>
                     <div className={`flex-1 pb-3 mt-8 md:block md:pb-0 md:mt-0 ${state ? 'block' : 'hidden'}`}>
-                        <ul className="justify-end items-center space-y-4 lg:text-xl md:text-[16px] md:flex md:space-x-4 md:space-y-0">
+                        <ul className="justify-end items-center space-y-4 lg:text-xl md:text-[16px] md:flex md:space-x-4 md:space-y-0 ">
 
                             {navOption}
 

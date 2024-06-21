@@ -3,9 +3,11 @@ import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../../Auth/Provider/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../../../hook/useAxiosPublic/useAxiosPublic";
 
 const SocialLink = () => {
 
+    const axiosPublic = useAxiosPublic();
     const { googleLogin } = useContext(AuthContext);
     // console.log(googleLogin)
     const navigate = useNavigate();
@@ -17,31 +19,25 @@ const SocialLink = () => {
 
             .then(result => {
                 console.log(result.user)
-                Swal.fire({
-                    title: "Google login Success!",
-                    text: "congratulations! Well Come Your Website.",
-                    icon: "success"
-                });
 
-                // const userInfo = {
-                //     email: result.user?.email,
-                //     name: result.user?.displayName
-                // }
-                // axiosPublic.post('/users', userInfo)
-                //     .then(res => {
-                //         console.log(res.data)
-                //         Swal.fire({
-                //             title: "LogIn Success!",
-                //             text: "You clicked the button!",
-                //             icon: "success"
-                //         });
+                const userInfo = {
+                    email: result.user?.email,
+                    name: result.user?.displayName
+                }
+                axiosPublic.post('/users', userInfo)
+                    .then(res => {
+                        console.log(res.data)
+                        Swal.fire({
+                            title: "Google LogIn Success!",
+                            text: "You clicked the button!",
+                            icon: "success"
+                        });
 
-                //         navigate('/')
-                //     })
-
+                        navigate('/')
+                    })
+                    navigate('/')
 
                 // Page Change
-                navigate('/')
 
             })
             .catch(error => {
