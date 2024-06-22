@@ -30,7 +30,7 @@ To get started with Love Link, visit [Love Link](https://love-link-client.vercel
 
 #### BioDatas Page
 - **Left Side:** Filter options for refining search results
-- **Right Side:** Display of BioDatas based on filters
+- **Right Side:** Display of Bio Data's based on filters
 
 #### About Us
 - Detailed information about the platform and its mission
