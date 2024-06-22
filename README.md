@@ -42,8 +42,8 @@ To get started with Love Link, visit [Love Link](your-website-url) and sign up t
 - **Submit Button:** Button to submit the contact form
 
 ### Dashboard
-- **User Edit Page:** Users can edit their biodata
-- **View Data:** Users can view their biodata
+- **User Edit Page:** Users can edit their bio data
+- **View Data:** Users can view their bio data
 - **My Contact Requests:** Users can see and delete their contact requests
 - **Favorite BioData:** Users can view their favorite profiles
 - **Got Married:** Users can submit their success story after getting married

@@ -77,8 +77,6 @@ const PremiumCards = () => {
                 </div>
 
 
-
-
                 <div className='grid grid-cols-1 justify-center items-center p-4   gap-5 md:grid-cols-2 lg:grid-cols-3'>
                     {
                         spots.filter(b => b?.status === "premium").slice(0, 6).map(data => <PremiumCard key={data._id} data={data}></PremiumCard>)

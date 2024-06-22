@@ -20,8 +20,6 @@ const PremiumCard = ({ data }) => {
                 <div className="px-6 py-2">
                     <h1 className="text-xl font-semibold text-gray-800 dark:text-white">{data.name}</h1>
 
-                    {/* <p className="py-2 text-gray-700 dark:text-gray-400">Full Stack maker & UI / UX Designer , love hip hop music Author of Building UI.</p> */}
-
                     <div className="flex items-center mt-2 text-gray-700 dark:text-gray-200">
                         <h1 className="px-2 text-sm font-bold">Gender : {data.type}</h1>
                     </div>
