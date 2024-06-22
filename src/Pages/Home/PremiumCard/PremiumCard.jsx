@@ -14,7 +14,7 @@ const PremiumCard = ({ data }) => {
                 <img src={data.photo || noImg} alt="" className="w-full lg:h-[300px] rounded-2xl p-4"/>
 
                 <div className="ml-28 mt-3">
-                    <h1 className="text-xl font-semibold text-gray-800 dark:text-white">dataData Id : {data.id}</h1>
+                    <h1 className="text-xl font-semibold text-gray-800 dark:text-white">Bio Id : {data.id}</h1>
                 </div>
 
                 <div className="px-6 py-2">

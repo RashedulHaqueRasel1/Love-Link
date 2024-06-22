@@ -6,6 +6,8 @@ import BioData from "./BioData";
 
 const BioDatas = () => {
 
+
+
     const axiosSecure = useAxiosSecure();
 
 
@@ -89,8 +91,12 @@ const BioDatas = () => {
 
 
             </div>
+
+
         </div>
     );
 };
+
+ 
 
 export default BioDatas;
