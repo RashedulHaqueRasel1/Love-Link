@@ -56,3 +56,42 @@ To get started with Love Link, visit [Love Link](https://love-link-client.vercel
 4. **Contact Us:** Reach out to us with any questions or feedback.
 5. **Dashboard:** Manage your profile, view and respond to contact requests, save favorite profiles, and share your success story.
 
+
+
+## Technology Used
+
+- Html
+- Tailwind CSS
+- Daisy UI
+- Meraki UI
+- Swiper.js
+- Git
+- React Router Dom
+- React Hook Form
+- React Icon
+- Express.js
+- React.js
+- MongoDB
+- Firebase
+- SweetAlert
+- Axios
+
+
+## Getting Started
+
+To get a local copy up and running, follow these simple steps.
+
+## Installation
+
+1. Clone the repo:
+   ```sh
+   git clone https://github.com/RashedulHaqueRasel1/Love-Link.git
+
+2. Install all dependencies:
+   ```sh
+    npm install
+   
+3. Live Preview
+To run the project locally and see a live preview:
+    ```sh
+     npm run dev
